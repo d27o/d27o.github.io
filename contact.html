@@ -15,18 +15,38 @@ permalink: /contact/
             </h2>
           </div>
 
-          <form action="http://formspree.io/kalugin.d27o@gmail.com" method="POST">
+<!-- 
+          <form
+          action="https://formspree.io/xknvkopk"
+          method="POST"
+        >
+          <label>
+            Your email:
+            <input type="text" name="_replyto">
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+        
+          your other form fields go here
+        
+          <button type="submit">Send</button>
+        </form> -->
+
+          <form action="https://formspree.io/xknvkopk" method="POST">
             <div class="col-md-6 col-sm-6">
-              <input type="text" class="form-control" placeholder="Имя" />
+              <input type="text" class="form-control" placeholder="Имя" name="name" />
             </div>
             <div class="col-md-6 col-sm-6">
-              <input type="email" class="form-control" placeholder="Email" />
+              <input type="email" class="form-control" placeholder="Email" name="_replyto" />
             </div>
             <div class="col-md-12 col-sm-12">
               <input
                 type="telephone"
                 class="form-control"
                 placeholder="Номер телефона"
+                name="phone"
               />
             </div>
             <div class="col-md-12 col-sm-12">
@@ -34,6 +54,7 @@ permalink: /contact/
                 class="form-control"
                 rows="5"
                 placeholder="Текст сообщения"
+                name="message"
               ></textarea>
             </div>
             <div class="col-md-3 col-sm-4">
