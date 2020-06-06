@@ -6,7 +6,6 @@ body {
   overflow-x: hidden;
 }
 
-
 /* typorgraphy */
 
 h1,
@@ -58,7 +57,6 @@ strong {
   background-color: #000;
   border-color: transparent;
 }
-
 
 /* general */
 
@@ -114,7 +112,6 @@ a:focus {
   font-weight: 400;
   letter-spacing: 4px;
 }
-
 
 /* preloader section */
 
@@ -176,7 +173,6 @@ a:focus {
     transform: rotate(360deg);
   }
 }
-
 
 /* main navigation */
 
@@ -277,7 +273,6 @@ a:focus {
   margin-top: 32px;
 }
 
-
 /* about section */
 
 #about .text-center {
@@ -310,7 +305,6 @@ a:focus {
   padding-top: 2px;
   padding-bottom: 2px;
 }
-
 
 /* portfolio section */
 
@@ -359,7 +353,6 @@ a:focus {
 #portfolio .text-center {
   padding-top: 62px;
 }
-
 
 /* single project section */
 
@@ -576,7 +569,6 @@ a:focus {
   border-color: transparent;
 }
 
-
 /* blog single post section */
 
 #blog-single-post .blog-post-des h3 {
@@ -698,3 +690,44 @@ blockquote {
   margin-left: 40px;
   margin-right: 40px;
 }
+
+/* added responsive modal begin */
+
+.modal-longscreen {
+  width: 868px;
+}
+
+@media (min-width: 300px) and (max-width: 374px) {
+  .modal-lg {
+    width: 300px; 
+  }
+  .modal-longscreen {
+    width: 268px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 424px) {
+  .modal-lg {
+    width: 360px; 
+  }
+  .modal-longscreen {
+    width: 328px;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .modal-lg {
+    width: 360px; 
+  }
+  .modal-longscreen {
+    width: 328px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .modal-longscreen {
+    width: 568px;
+  }
+}
+
+/* added responsive modal end* /
