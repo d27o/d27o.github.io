@@ -1,7 +1,7 @@
 ---
 title: Пост №0
 layout: post
-date: '2020-06-09 00:00:00'
+date: '2020-06-21 00:00:00'
 categories:
 - info
 preview: "/src/images/posts/jekyll-logo-dark-solid.png"
