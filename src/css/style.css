@@ -1,6 +1,11 @@
+@font-face {
+  font-family: "Open-sans"; /* Имя шрифта */
+  src: url(../fonts/OpenSans-Regular.ttf); /* Путь к файлу со шрифтом */
+ }
+
 body {
   background: #ffffff;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Open-sans";
   font-style: normal;
   font-weight: 300;
   overflow-x: hidden;
