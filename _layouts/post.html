@@ -2,28 +2,32 @@
 layout: default
 ---
 
-<section id="blog-single-post">
+<section class="post">
   <div class="container">
     <div class="row">
 
-      <div class="col-12 mt-5">
-        <div class="blog-single-post-thumb">
-          <div class="blog-post-image">
-            <img src="{{ page.preview }}" class="img-fluid" alt="Blog Image">
+      <div class="col-12 ">
+        <div class="post__body">
+          <div class="">
+            <img src="{{ page.preview }}" class="img-fluid post__heading-img" alt="Blog Image">
           </div>
 
-          <div class="blog-post-title">
+          <div class="post__title">
             <h2>{{ page.title }}</a></h2>
           </div>
 
-          <div class="blog-post-format">
-            <span><a href="/about"><img src="/src/images/photo.jpg" class="img-responsive "> Дмитрий
-                Калугин</a></span>
-                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}   
-            <span><i class="fa fa-date"></i>{{ page.date | date: "%-d %B %Y" }}</span>
+          <div class="post__meta">
+            <span class="post__meta-span">
+              <a class="post__meta-a" href="/about">
+                <img src="/src/images/photo.jpg" class="post__meta-img">
+                Дмитрий Калугин
+              </a>
+            </span>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <span class="post__meta-span"><img src="../src/images/icons/date-icon.svg">{{ page.date | date: "%-d %B %Y" }}</span>
           </div>
 
-          <div class="blog-post-des">
+          <div class="">
             {{content}}
           </div>
 

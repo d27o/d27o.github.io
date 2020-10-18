@@ -1,28 +1,28 @@
 ---
 layout: default
 ---
-<section id="blog">
+<section class="blog">
   <div class="container">
     <div class="row">
 
       <div class="col-md-offset-1 col-md-10 col-sm-12">
-        <div class="home">
+        <div class="blog__body">
           {%- if page.title -%}
-          <h1 class="page-heading">{{ page.title }}</h1>
+          <h1 class="blog__heading">{{ page.title }}</h1>
           {%- endif -%}
 
           {{ content }}
 
           {%- if site.posts.size > 0 -%}
-          <h2 class="post-list-heading">{{ page.list_title | default: "Посты" }}</h2>
-          <div class="post-list">
+          <h2 class="">Посты</h2>
+          <div class="blog__list">
 
             {%- for post in site.posts -%}
-            <div class="blog-post-thumb">
+            <div class="blog__post-thumb">
 
-              <div class="blog-post-image">
+              <div class="blog__post">
                 <a href="{{ post.url | relative_url }}">
-                  <img src="{{ post.preview }}" class="img-fluid" alt="preview image">
+                  <img src="{{ post.preview }}" class="img-fluid blog__post-img" alt="preview image">
                 </a>
               </div>
 
@@ -31,10 +31,7 @@ layout: default
               </div>
 
               {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-              <span class="post-meta">{{ post.date | date: date_format }}</span>
-              {%- if site.show_excerpts -%}
-              {{ post.excerpt }}
-              {%- endif -%}
+              <span class="">{{ post.date | date: date_format }}</span>
             </div>
             {%- endfor -%}
           </div>
