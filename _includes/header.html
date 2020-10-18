@@ -12,18 +12,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="{{ site.baseurl }}/">Проекты</a>
+        {% for item in site.data.navigation %}
+        <li class="nav-item {% if item.url == page.url %}active{% endif %}">
+          <a class="nav-link waves-effect waves-light" href="{{ item.url }}">{{ item.title }}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="{{ site.baseurl }}/about">Обо мне</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="{{ site.baseurl }}/blog">Блог</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="{{ site.baseurl }}/contact">Контакты</a>
-        </li>
+        {% endfor %}
       </ul>
       <form class="form-inline">
         <div class="md-form my-0">
