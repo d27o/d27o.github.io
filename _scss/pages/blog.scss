@@ -1,0 +1,29 @@
+.blog {
+  &__body {
+  }
+  &__heading {
+  }
+  &__list {
+  }
+  &__post {
+    &-thumb {
+      margin: 20px 0 50px 0;
+    }
+    &-img {
+    }
+  }
+  &__meta {
+    
+  }
+}
+
+@media (min-width: 768px) {
+  .blog {
+    &__post {
+      &-img {
+        max-width: 510px;
+        height: auto;
+      }
+    }
+  }
+}

@@ -37,7 +37,4 @@ date: '2020-07-05 12:00:00'
 
 Полное описание нововведений по ссылке ниже.
 
-Оригинал: [https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/][https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/] 
-
-
-[https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/]:https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/
+Оригинал: [блог Bootstrap](https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/)

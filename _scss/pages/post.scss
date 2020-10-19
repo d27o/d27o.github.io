@@ -1,0 +1,41 @@
+.post {
+  &__body {
+  }
+  &__heading {
+    &-img {
+      margin: 40px 0 20px 0;
+    }
+  }
+  &__title {
+  }
+  &__author {
+  }
+  &__meta {
+    padding-bottom: 22px;
+    &-span {
+      letter-spacing: 0.5px;
+      padding-right: 12px;
+    }
+    &-a {
+      color: #333;
+    }
+    &-img {
+      display: inline-block;
+      width: 42px;
+      margin-right: 4px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .post {
+    &__body {
+    }
+    &__heading {
+      &-img {
+        max-width: 510px;
+        height: auto;
+      }
+    }
+  }
+}

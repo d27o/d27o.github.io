@@ -3,53 +3,57 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
+title: Проекты
 ---
 
-<!-- home section -->
 
-<section id="home">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12">
-          <h2>
-            Давайте разрабатывать вместе.
-          </h2>
-          <hr />
-        </div>
+<!-- <section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <h2>
+          Давайте разрабатывать вместе.
+        </h2>
+        <hr />
       </div>
     </div>
-  </section>
+  </div>
+</section> -->
 
-  <!-- portfolio section -->
+<section class="portfolio">
+  <div class="container">
 
-  <section id="portfolio">
-    <div class="container">
-      <div class="row">
+    <div class="row">
+      <div class="col-sm-12 ">
+        <h2 class="portfolio__title">
+          Давайте разрабатывать вместе.
+        </h2>
+        <hr />
+      </div>
+    </div>
 
-        <div class="col-md-4 col-sm-6">
-          <a href="{{ site.baseurl }}/boevaya-classica">
-            <div class="portfolio-thumb">
-              <img
-                src="src/images/preview-bk-lp.jpg"
-                class="img-responsive"
-                alt="Portfolio"
-              />
-              <div class="portfolio-overlay">
-                <div class="portfolio-item">
-                  <h3>LADA 500K</h3>
-                  <small>Landing Page</small>
-                </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4 ">
+        <a href="{{ site.baseurl }}/boevaya-classica">
+          <div class="portfolio__thumb">
+            <img src="src/images/preview-bk-lp.jpg" class="img-fluid" alt="Portfolio"
+              style="max-width: 100%; height: auto;" />
+            <div class="portfolio__overlay">
+              <div class="portfolio__item">
+                <h3>LADA 500K</h3>
+                <small class="portfolio__small">Landing Page</small>
               </div>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
+      </div>
 
-        <div class="col-md-12 col-sm-12 text-center">
-          <h3>
-            Заинтересовались?
-            <a href="contact">Тогда пишите</a>
-          </h3>
-        </div>
+      <div class="col-md-12 col-sm-12 text-center">
+        <h3>
+          Заинтересовались?
+          <a href="contact">Тогда пишите</a>
+        </h3>
       </div>
     </div>
-  </section>
+  </div>
+</section>

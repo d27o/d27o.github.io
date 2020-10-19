@@ -1,53 +1,55 @@
 ---
 layout: page
-title: About
+title: Контакты
 permalink: /contact/
 ---
 
 <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-1 col-md-10 col-sm-12">
-          <div class="section-title">
-            <h3>Связаться</h3>
-            <h2>
-              Вопросы? Предложения? Пишите!
-            </h2>
+  <div class="container">
+    <div style="display: flex; justify-content: center;">
+      <div class="col-sm-12 col-md-12 col-lg-8">
+        <div class="section-title mt-5 px-5">
+          <h3>Связаться</h3>
+          <h2>
+            Вопросы? Предложения? Пишите!
+          </h2>
+        </div>
+
+        <!-- <form action="https://formspree.io/xknvkopk" method="POST">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" placeholder="Имя" name="name" />
+        </div>
+        <div class="col-sm-12">
+          <input type="email" class="form-control" placeholder="Email" name="_replyto" />
+        </div>
+        <div class="col-sm-12">
+          <input type="telephone" class="form-control" placeholder="Номер телефона" name="phone" />
+        </div>
+        <div class=" col-sm-12">
+          <textarea class="form-control" rows="5" placeholder="Текст сообщения" name="message"></textarea>
+        </div>
+        <div class="col-md-3 col-sm-4">
+          <input type="submit" class="form-control" value="Отправить" />
+        </div>
+      </form> -->
+
+        <form class="p-5" action="https://formspree.io/xknvkopk" method="POST">
+
+          <input type="text" class="form-control mb-4" placeholder="Имя">
+          <input type="email" class="form-control mb-4" placeholder="E-mail">
+          <textarea class="form-control rounded-0" rows="3" placeholder="Текст сообщения"></textarea>
+
+          <div class="custom-control custom-checkbox mb-4">
+            <input type="checkbox" class="custom-control-input" id="сonsentToDataProcessing">
+            <label class="custom-control-label" for="сonsentToDataProcessing">Согласен на обработку персональных
+              данных</label>
           </div>
 
-          <form action="https://formspree.io/xknvkopk" method="POST">
-            <div class="col-md-6 col-sm-6">
-              <input type="text" class="form-control" placeholder="Имя" name="name" />
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <input type="email" class="form-control" placeholder="Email" name="_replyto" />
-            </div>
-            <div class="col-md-12 col-sm-12">
-              <input
-                type="telephone"
-                class="form-control"
-                placeholder="Номер телефона"
-                name="phone"
-              />
-            </div>
-            <div class="col-md-12 col-sm-12">
-              <textarea
-                class="form-control"
-                rows="5"
-                placeholder="Текст сообщения"
-                name="message"
-              ></textarea>
-            </div>
-            <div class="col-md-3 col-sm-4">
-              <input
-                type="submit"
-                class="form-control"
-                value="Отправить"
-              />
-            </div>
-          </form>
+          <button class="btn btn-block" type="submit">Отправить</button>
+        </form>
 
-        </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
