@@ -35,12 +35,12 @@ permalink: /contact/
 
         <form class="p-5" action="https://formspree.io/xknvkopk" method="POST">
 
-          <input type="text" class="form-control mb-4" placeholder="Имя">
-          <input type="email" class="form-control mb-4" placeholder="E-mail">
-          <textarea class="form-control rounded-0" rows="3" placeholder="Текст сообщения"></textarea>
+          <input type="text" class="form-control mb-4" placeholder="Имя" name="name">
+          <input type="email" class="form-control mb-4" placeholder="E-mail" name="_replyto">
+          <textarea class="form-control rounded-0" rows="3" placeholder="Текст сообщения" name="message"></textarea>
 
           <div class="custom-control custom-checkbox mb-4">
-            <input type="checkbox" class="custom-control-input" id="сonsentToDataProcessing">
+            <input type="checkbox" class="custom-control-input" id="сonsentToDataProcessing" required>
             <label class="custom-control-label" for="сonsentToDataProcessing">Согласен на обработку персональных
               данных</label>
           </div>
