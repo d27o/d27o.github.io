@@ -14,10 +14,10 @@
     margin: 20px 0 20px 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-direction: row;
   }
   &__container-device {
-    // width: 360px;
     height: 310px;
     position: relative;
     display: flex;
@@ -113,16 +113,16 @@
   }
 
   &__properties {
+    margin: 0 0 10px 0;
     &-wrp {
-      margin: 20px 0 20px 0;
+      margin: 20px 0 0 0;
     }
-    display: flex;
-    flex-direction: column;
     &-title {
-      // display: flex;
-      // justify-content: center;
+      display: flex;
+      justify-content: center;
     }
     &-technologies {
+      text-align: center;
       &-item {
         border: 1px solid;
         border-radius: 15px;
@@ -135,7 +135,8 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      
+      display: flex;
+      justify-content: center;
       &-item {
         text-decoration: none;
       }
@@ -144,10 +145,61 @@
       }
     }
     &-roles {
+      display: flex;
+      justify-content: center;
       list-style: none;
       margin: 0;
       padding: 0;
       &-item {
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .single-project {
+    &__wallpaper {
+      margin: 10px 0 10px 0;
+    }
+    &__container-device {
+      height: 275px;
+    }
+    &__iphone {
+      width: 125px;
+      height: 250px;
+    }
+    &__ipad {
+      width: 200px;
+      height: 275px;
+    }
+    &__macbook {
+      width: 290px;
+      height: 200px;
+      &::before {
+        width: 310px;
+        height: 14px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .single-project {
+    &__container-device {
+      height: 225px;
+    }
+    &__devices {
+      flex-direction: column;
+      &-item-2,
+      &-item-3 {
+        display: none;
+      }
+    }
+    &__macbook {
+      width: 295px;
+      height: 210px;
+      &::before {
+        width: 312px;
+        height: 14px;
       }
     }
   }
