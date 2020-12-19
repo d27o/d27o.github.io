@@ -1,6 +1,5 @@
 .about {
-  &__title,
-  &__sub-title {
+  &__title {
     display: flex;
     justify-content: center;
     &-wrp {
@@ -9,8 +8,7 @@
   }
   &__img {
     &-wrp {
-      display: flex;
-      justify-content: center;
+      text-align: center;
       padding: 0 0 50px 0;
     }
   }
