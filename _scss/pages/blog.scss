@@ -2,14 +2,18 @@
   &__body {
   }
   &__heading {
+    padding: 20px 0 20px 0;
   }
   &__list {
   }
   &__post {
     &-thumb {
-      margin: 20px 0 50px 0;
+      margin: 20px 0 20px 0;
     }
     &-img {
+    }
+    &-title {
+      margin: 5px 0 0px 0;
     }
   }
   &__meta {

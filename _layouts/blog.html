@@ -1,37 +1,37 @@
 ---
 layout: default
 ---
+
 <section class="blog">
   <div class="container">
     <div class="row">
-
-      <div class="col-md-offset-1 col-md-10 col-sm-12">
+      <div class="col-md-12">
         <div class="blog__body">
           {%- if page.title -%}
           <h1 class="blog__heading">{{ page.title }}</h1>
-          {%- endif -%}
-
-          {{ content }}
-
-          {%- if site.posts.size > 0 -%}
-          <h2 class="">Посты</h2>
+          {%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
           <div class="blog__list">
-
             {%- for post in site.posts -%}
             <div class="blog__post-thumb">
-
               <div class="blog__post">
                 <a href="{{ post.url | relative_url }}">
-                  <img src="{{ post.preview }}" class="img-fluid blog__post-img" alt="preview image">
+                  <img
+                    src="{{ post.preview }}"
+                    class="img-fluid blog__post-img"
+                    alt="preview image"
+                  />
                 </a>
               </div>
 
-              <div class="blog-post-title">
-                <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-              </div>
+              <h2 class="blog__post-title">
+                <a href="{{ post.url | relative_url }}"
+                  >{{ post.title | escape }}</a
+                >
+              </h2>
 
-              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-              <span class="">{{ post.date | date: date_format }}</span>
+              {%- assign date_format = site.minima.date_format | default: "%b
+              %-d, %Y" -%}
+              <span >{{ post.date | date: date_format }}</span>
             </div>
             {%- endfor -%}
           </div>
