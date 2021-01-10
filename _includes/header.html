@@ -1,62 +1,42 @@
-<!-- navigation section  -->
-
-<nav class="navbar navbar-expand-lg navbar-dark elegant-color-dark">
+<nav class="navbar-c">
   <div class="container">
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-      d27o
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        {% for item in site.data.navigation %}
-        <li class="nav-item {% if item.url == page.url %}active{% endif %}">
-          <a class="nav-link waves-effect waves-light" href="{{ item.url }}"
-            >{{ item.title }}</a
-          >
-        </li>
-        {% endfor %}
-      </ul>
-      <form class="form-inline">
-        <div class="md-form my-0">
-          <input
-            class="form-control mr-sm-2"
-            type="text"
-            placeholder="Здесь будет поиск"
-            aria-label="Search"
-            disabled
-          />
+    <div class="navbar-c__body">
+
+      <a class="navbar-c__brand" href="{{ site.baseurl }}/">
+        d27o
+      </a>
+      <div class="navbar-c__content">
+        <div class="navbar-c__nav" id="navbar__nav">
+          <a class="navbar-c__brand_mobile" href="{{ site.baseurl }}/">
+            d27o
+          </a>
+          <ul class="navbar-c__nav-list">
+            {% for item in site.data.navigation %}
+            <li class="navbar-c__nav-list-item {% if item.url == page.url %}navbar-c__nav-list-item_active{% endif %}">
+              <a class="navbar-c__nav-list-item-link" href="{{ item.url }}">{{ item.title }}</a>
+            </li>
+            {% endfor %}
+            <li class="navbar-c__nav-list-item">
+              <form class="navbar-c__form-mobile">
+                <div class="navbar-c__search-wrp">
+                  <input class="navbar-c__search" type="text" placeholder="Здесь будет поиск" aria-label="Search"
+                    disabled />
+                </div>
+              </form>
+            </li>
+          </ul>
         </div>
-      </form>
+        <form class="navbar-c__form">
+          <div class="navbar-c__search-wrp">
+            <input class="navbar-c__search" type="text" placeholder="Здесь будет поиск" aria-label="Search" disabled />
+          </div>
+        </form>
+      </div>
+
+      <button class="navbar-c__burger" type="button" id="navbar__burger">
+        <img class="navbar-c__toggler-icon" src="../src/images/icons/burger-icon.svg">
+      </button>
+
     </div>
   </div>
 </nav>
-<!-- <hr />
-<nav class="navbar-c">
-  <div class="container">
-    <a class="navbar-c__brand" href="{{ site.baseurl }}/">
-      d27o
-    </a>
-    <button
-      class="navbar-c__burger"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-c__nav"></div>
-  </div>
-</nav> -->

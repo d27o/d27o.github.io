@@ -15,6 +15,9 @@
     position: relative;
     padding: 0;
     margin-top: 32px;
+    &-img {
+      
+    }
     &:hover .portfolio__overlay{
       opacity: .9;
     }
