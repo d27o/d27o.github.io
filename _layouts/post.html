@@ -6,29 +6,32 @@ layout: default
   <div class="container">
     <div class="row">
 
-      <div class="col-12 ">
+      <div class="col-12">
         <div class="post__body">
-          <div class="">
-            <img src="{{ page.preview }}" class="img-fluid post__heading-img" alt="Blog Image">
-          </div>
 
           <div class="post__title">
-            <h2>{{ page.title }}</a></h2>
+            <h1>{{ page.title }}</h1>
+          </div>
+
+          <div class="post__heading-img-wrp">
+            <img src="{{ page.preview }}" class="img-fluid post__heading-img" alt="Blog Image">
           </div>
 
           <div class="post__meta">
             <span class="post__meta-span">
               <a class="post__meta-a" href="/about">
                 <img src="/src/images/photo.jpg" class="post__meta-img">
-                Дмитрий Калугин
+                d27o
               </a>
             </span>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
             <span class="post__meta-date"><img src="../src/images/icons/date-icon.svg">{{ page.date | date: "%-d %B %Y" }}</span>
           </div>
 
-          <div class="">
+          <div class="post__body-wrp">
+            <div class="col-12 col-sm-12 col-md-6 col-xl-6 post__body">
             {{content}}
+          </div>
           </div>
 
         </div>
