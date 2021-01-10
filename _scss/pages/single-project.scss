@@ -9,6 +9,7 @@
   &__wallpaper {
     display: flex;
     align-self: center;
+    justify-content: center;
   }
   &__devices {
     margin: 20px 0 20px 0;
@@ -54,61 +55,122 @@
     border-radius: 50%;
   }
 
-  &__iphone {
-    width: 150px;
-    height: 275px;
-    border: solid #484f5e;
-    border-width: 20px 8px;
-    border-radius: 6px;
-    background: url("../../src/images/bk-iphone.png") no-repeat;
-    background-size: 100% 100%;
-    background-color: #484f5e;
-    &::before {
-      top: -10px;
+  &__macbook {
+    &_bk {
+      width: 350px;
+      height: 225px;
+      border: 8px solid #484f5e;
+      border-radius: 7px 7px 0 0;
+      background: url("../../src/images/bk-mac.png") no-repeat;
+      background-size: 100% 100%;
+      background-color: #484f5e;
+      &::before {
+        width: 375px;
+        height: 16px;
+        background-color: #e8ebf0;
+        top: calc(100% + 8px);
+        border-radius: 0 0 14px 14px;
+      }
+      &::after {
+        width: 3px;
+        height: 3px;
+        background-color: #a5adbe;
+        top: -6px;
+        border-radius: 50%;
+      }
     }
-    &::after {
-      bottom: -13px;
+    &_grant {
+      width: 350px;
+      height: 225px;
+      border: 8px solid #484f5e;
+      border-radius: 7px 7px 0 0;
+      background: url("../../src/images/grant-mac.png") no-repeat;
+      background-size: 100% 100%;
+      background-color: #484f5e;
+      &::before {
+        width: 375px;
+        height: 16px;
+        background-color: #e8ebf0;
+        top: calc(100% + 8px);
+        border-radius: 0 0 14px 14px;
+      }
+      &::after {
+        width: 3px;
+        height: 3px;
+        background-color: #a5adbe;
+        top: -6px;
+        border-radius: 50%;
+      }
     }
   }
 
   &__ipad {
-    width: 235px;
-    height: 310px;
-    border: solid #484f5e;
-    border-width: 18px 12px;
-    border-radius: 12px;
-    background: url("../../src/images/bk-ipad.png") no-repeat;
-    background-size: 100% 100%;
-    background-color: #484f5e;
-    &::before {
-      top: -10px;
+    &_bk {
+      width: 235px;
+      height: 310px;
+      border: solid #484f5e;
+      border-width: 18px 12px;
+      border-radius: 12px;
+      background: url("../../src/images/bk-ipad.png") no-repeat;
+      background-size: 100% 100%;
+      background-color: #484f5e;
+      &::before {
+        top: -10px;
+      }
+      &::after {
+        bottom: -13px;
+      }
     }
-    &::after {
-      bottom: -13px;
+    &_grant {
+      width: 235px;
+      height: 310px;
+      border: solid #484f5e;
+      border-width: 18px 12px;
+      border-radius: 12px;
+      background: url("../../src/images/grant-ipad.png") no-repeat;
+      background-size: 100% 100%;
+      background-color: #484f5e;
+      &::before {
+        top: -10px;
+      }
+      &::after {
+        bottom: -13px;
+      }
     }
   }
 
-  &__macbook {
-    width: 350px;
-    height: 225px;
-    border: 8px solid #484f5e;
-    border-radius: 7px 7px 0 0;
-    background: url("../../src/images/bk-mac.png") no-repeat;
-    background-size: 100% 100%;
-    background-color: #484f5e;
-    &::before {
-      width: 375px;
-      height: 16px;
-      background-color: #e8ebf0;
-      top: calc(100% + 8px);
-      border-radius: 0 0 14px 14px;
+  &__iphone {
+    &_bk {
+      width: 150px;
+      height: 275px;
+      border: solid #484f5e;
+      border-width: 20px 8px;
+      border-radius: 6px;
+      background: url("../../src/images/bk-iphone.png") no-repeat;
+      background-size: 100% 100%;
+      background-color: #484f5e;
+      &::before {
+        top: -10px;
+      }
+      &::after {
+        bottom: -13px;
+      }
     }
-    &::after {
-      width: 3px;
-      height: 3px;
-      background-color: #a5adbe;
-      top: -6px;
-      border-radius: 50%;
+    &_grant {
+      width: 150px;
+      height: 275px;
+      border: solid #484f5e;
+      border-width: 20px 8px;
+      border-radius: 6px;
+      background: url("../../src/images/grant-iphone.png") no-repeat;
+      background-size: 100% 100%;
+      background-color: #484f5e;
+      &::before {
+        top: -10px;
+      }
+      &::after {
+        bottom: -13px;
+      }
     }
   }
 
@@ -138,7 +200,9 @@
       display: flex;
       justify-content: center;
       &-item {
-        text-decoration: none;
+        &-link {
+          
+        }
       }
       &-icon {
         padding: 0 0 5px 3px;
