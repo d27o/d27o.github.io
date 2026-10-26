@@ -1,56 +1,21 @@
 ---
 layout: page
 title: Контакты
+description: "Связаться с d27o: Senior Software Engineer, Vue 3 и TypeScript. Открыт к предложениям работы."
 permalink: /contact/
 ---
 
-<section class="contact">
-  <div class="container">
-    <div class="contact__title">
-      <h1>Связаться</h1>
+<section class="career container" aria-labelledby="contact-title">
+  <header class="career__intro">
+    <p class="career__eyebrow">Контакты</p>
+    <h1 id="contact-title">Давайте знакомиться</h1>
+    <p class="career__lead">Открыт к предложениям на роль {{ site.role }}.</p>
+    <p>Расскажите о продукте, задачах команды и формате работы.</p>
+    <div class="career__actions">
+      <a class="career__button" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a href="https://github.com/{{ site.github_username }}">GitHub · {{ site.github_username }}</a>
+      <a href="https://t.me/d27odev">Telegram · @d27odev</a>
     </div>
-    <div class="col-12 contact__body">
-      <form
-        class="contact__form"
-        action="https://formspree.io/xknvkopk"
-        method="POST"
-      >
-        <input
-          type="text"
-          class="form-control mb-4"
-          placeholder="Имя"
-          name="name"
-          required
-        />
-        <input
-          type="email"
-          class="form-control mb-4"
-          placeholder="E-mail"
-          name="_replyto"
-          required
-        />
-        <textarea
-          class="form-control rounded-0 mb-2"
-          rows="3"
-          placeholder="Текст сообщения"
-          name="message"
-          required
-        ></textarea>
-
-        <div class="custom-control custom-checkbox mb-4">
-          <input
-            type="checkbox"
-            class="custom-control-input"
-            id="сonsentToDataProcessing"
-            required
-          />
-          <label class="custom-control-label" for="сonsentToDataProcessing"
-            >Согласен на обработку персональных данных</label
-          >
-        </div>
-
-        <button class="btn btn-block" type="submit">Отправить</button>
-      </form>
-    </div>
-  </div>
+    <p class="career__muted">{{ site.location }} · Предпочитаю удалённую работу · Русский / English C1</p>
+  </header>
 </section>

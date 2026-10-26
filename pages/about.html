@@ -1,81 +1,89 @@
 ---
 layout: page
 title: Обо мне
+description: "Senior Software Engineer. Опыт в Angara Security и Huawei: продуктовая разработка, TypeScript, качество, производительность и менторство."
 permalink: /about/
 ---
 
-<section class="about">
-  <div class="container">
-    <div class="row">
+<section class="career container" aria-labelledby="about-title">
+  <header class="career__intro">
+    <p class="career__eyebrow">Обо мне</p>
+    <h1 id="about-title">{{ site.role }}</h1>
+    <p class="career__lead">Соединяю продуктовые задачи с инженерной реализацией.</p>
+    <p>Работаю с коммерческими веб-продуктами: собираю требования, проектирую и разрабатываю функциональность,
+      улучшаю существующие интерфейсы и выстраиваю практики качества.
+      Для меня важны понятные пользовательские сценарии, сопровождаемый код и предсказуемые изменения.</p>
+    <p>Мой текущий стек:</p>
+    <ul class="career__tags" aria-label="Текущий стек">
+      {% for technology in site.current_stack %}<li>{{ technology }}</li>{% endfor %}
+    </ul>
+    <p>Vue 3 и TypeScript использую для разработки интерфейсов, Pinia — для управления состоянием,
+      Vitest и Playwright — для автоматизированных проверок.</p>
+  </header>
 
-      <div class="col-12">
-        <div class="about__title-wrp">
-          <h1 class="about__title">Обо мне</h1>
-        </div>
+  <section class="career__section" aria-labelledby="experience-title">
+    <h2 id="experience-title">Коммерческий опыт</h2>
+    <article class="career__experience">
+      <h3>Angara Security</h3>
+      <p class="career__muted">Март 2024 — сентябрь 2026</p>
+      <ul>
+        <li>Проектировал и разрабатывал функциональность двух продуктов; переработал устаревший UI
+          и пользовательские сценарии, устранил существовавшие ошибки.</li>
+        <li>Совместно с QA выстроил пирамиду тестирования, внедрил тесты внешнего вида интерфейса
+          и процесс покрытия новой функциональности автотестами.</li>
+        <li>Собирал требования заказчиков, преобразовывал их в задачи, консультировал стейкхолдеров
+          и участвовал в код-ревью.</li>
+        <li>Проводил онбординг новых коллег, обучал стажёров и организовывал технические митапы.</li>
+        <li>Внедрил AI-агентов в процесс разработки и практику создания прототипов
+          для проверки продуктовых гипотез до начала разработки.</li>
+      </ul>
+    </article>
+    <article class="career__experience">
+      <h3>Huawei</h3>
+      <p class="career__muted">Апрель 2021 — март 2024 · работа в двух командах</p>
+      <ul>
+        <li>Спроектировал и разработал с нуля сервис визуализации данных;
+          оптимизировал первую отрисовку и устранил утечки памяти.</li>
+        <li>Настроил CI/CD в Jenkins: юнит-тесты, линтинг, сборку и выкладку на тестовый стенд.
+          Организовал сбор продуктовых метрик и выполнял первичную аналитику.</li>
+        <li>В другом сервисе разработал большую часть функциональности, внедрил электронную подпись
+          и выполнил миграцию с JavaScript на TypeScript.</li>
+        <li>Перенёс управление состоянием с самописного решения на Vuex,
+          внедрил единый процесс код-ревью и провёл серию лекций по GraphQL.</li>
+        <li>Менторил стажёра, проводил сессии парного программирования;
+          по необходимости разрабатывал и поддерживал backend проекта.</li>
+      </ul>
+    </article>
+    <p class="career__muted">Описания обобщены: закрытые продукты, заказчики и внутренние материалы не раскрываются.</p>
+  </section>
+
+  <section class="career__section" aria-labelledby="approach-title">
+    <h2 id="approach-title">Что привношу в команду</h2>
+    <div class="career__grid">
+      <div class="career__card">
+        <h3>Работа с задачей целиком</h3>
+        <p>Уточняю требования, превращаю их в задачи и связываю технические решения
+          с пользовательскими сценариями и целями продукта.</p>
       </div>
-
-      <div class="col-md-12 col-lg-8">
-        <div class="about__img-wrp">
-          <img src="../src/images/photo.jpg" class="img-fluid about__img" alt="About image" />
-        </div>
+      <div class="career__card">
+        <h3>Качество и поддержка</h3>
+        <p>Развиваю автоматизацию тестирования, типизацию и код-ревью.
+          Работаю с производительностью и существующим кодом.</p>
       </div>
-      <div class="col-md-12 col-lg-4">
-        <h2>Девиз</h2>
-        <blockquote>
-          <p class="about__blockquote-body">
-            Большинство хороших программистов делают свою работу не потому,
-            что ожидают оплаты или признания, а потому
-            что получают удовольствие от программирования.
-          </p>
-          <cite>Linus Torvalds</cite>
-        </blockquote>
+      <div class="career__card">
+        <h3>Обмен опытом</h3>
+        <p>Помогаю коллегам адаптироваться, обучаю стажёров, делюсь практиками
+          и внедряю инструменты, полезные всей команде.</p>
       </div>
-
-
-      <div class="col-12">
-        <p>
-          Если Вы ищете анимацию или "вау-эффекты", Вам лучше изменить направление! В своих работах я всегда стараюсь
-          сочетать эстетические и функциональные аспекты, ищу правильный баланс, чтобы не раздражать пользователя. Как
-          выглядит хороший сайт? Вот мое мнение: хороший сайт должен быть привлекательным, но удобным.
-          Увлекательное сообщение, вместе с немедленным пониманием. Оригинальное содержание и легко отслеживаемая
-          информация: вот мой рецепт!
-        </p>
-      </div>
-
-      <hr />
-
-      <div class="col-12 about__title">
-        <div class="about__title-wrp">
-          <h2>Разрабатываю</h2>
-          <hr class="about__line">
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-6 col-md-4">
-        <h3 class="about__skill-title">LP/SPA</h3>
-        <ul class="about__skill-list">
-          <li>Landing Page</li>
-          <li>Single Page Application</li>
-        </ul>
-      </div>
-
-      <div class="col-6 col-sm-6 col-md-4">
-        <h3 class="about__skill-title">E-commerce</h3>
-        <ul class="about__skill-list">
-          <li>WordPress</li>
-          <li>WooCommerce</li>
-        </ul>
-      </div>
-
-      <div class="col-6 col-sm-6 col-md-4">
-        <h3 class="about__skill-title">Web Application</h3>
-        <ul class="about__skill-list">
-          <li>Info Portals</li>
-          <li>Web Services</li>
-        </ul>
-      </div>
-
-
     </div>
-  </div>
+  </section>
+  <aside class="career__callout">
+    <h2>Открыт к предложениям</h2>
+    <p>Ищу роль {{ site.role }}. Москва · Предпочитаю удалённую работу.
+      Русский — родной, английский — C1.</p>
+    <div class="career__actions">
+      <a class="career__button" href="mailto:{{ site.email }}">Связаться</a>
+      <a href="{{ '/' | relative_url }}">Посмотреть проекты →</a>
+    </div>
+  </aside>
 </section>

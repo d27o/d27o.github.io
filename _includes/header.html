@@ -13,28 +13,15 @@
           <ul class="navbar-c__nav-list">
             {% for item in site.data.navigation %}
             <li class="navbar-c__nav-list-item {% if item.url == page.url %}navbar-c__nav-list-item_active{% endif %}">
-              <a class="navbar-c__nav-list-item-link" href="{{ item.url }}">{{ item.title }}</a>
+              <a class="navbar-c__nav-list-item-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
             </li>
             {% endfor %}
-            <li class="navbar-c__nav-list-item">
-              <form class="navbar-c__form-mobile">
-                <div class="navbar-c__search-wrp">
-                  <input class="navbar-c__search" type="text" placeholder="Здесь будет поиск" aria-label="Search"
-                    disabled />
-                </div>
-              </form>
-            </li>
           </ul>
         </div>
-        <form class="navbar-c__form">
-          <div class="navbar-c__search-wrp">
-            <input class="navbar-c__search" type="text" placeholder="Здесь будет поиск" aria-label="Search" disabled />
-          </div>
-        </form>
       </div>
 
-      <button class="navbar-c__burger" type="button" id="navbar__burger">
-        <img class="navbar-c__toggler-icon" src="../src/images/icons/burger-icon.svg">
+      <button class="navbar-c__burger" type="button" id="navbar__burger" aria-label="Открыть или закрыть меню">
+        <img class="navbar-c__toggler-icon" src="{{ '/src/images/icons/burger-icon.svg' | relative_url }}" alt="">
       </button>
 
     </div>
