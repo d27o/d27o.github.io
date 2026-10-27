@@ -1,90 +1,61 @@
 import { site } from "@/lib/site";
+import { experiences } from "@/lib/experience";
 import { pageMetadata } from "@/lib/metadata";
 import { Stack } from "@/components/Stack";
 
 export const metadata = pageMetadata("Обо мне", "Senior Software Engineer. Опыт в Angara Security и Huawei: продуктовая разработка, TypeScript, качество, производительность и менторство.", "/about/");
 
 export default function Page() {
-  return (
-<section className="career container" aria-labelledby="about-title">
-  <header className="career__intro">
-    <p className="career__eyebrow">Обо мне</p>
-    <h1 id="about-title">{site.role}</h1>
-    <p className="career__lead">Соединяю продуктовые задачи с инженерной реализацией.</p>
-    <p>Работаю с коммерческими веб-продуктами: собираю требования, проектирую и разрабатываю функциональность,
-      улучшаю существующие интерфейсы и выстраиваю практики качества.
-      Для меня важны понятные пользовательские сценарии, сопровождаемый код и предсказуемые изменения.</p>
-    <p>Мой текущий стек:</p>
-    <Stack />
-    <p>Vue 3 и TypeScript использую для разработки интерфейсов, Pinia — для управления состоянием,
-      Vitest и Playwright — для автоматизированных проверок.</p>
-  </header>
+  return <div className="career container">
+    <header className="career__intro">
+      <p className="career__eyebrow">Обо мне / {site.name}</p>
+      <h1>От продуктовой задачи до работающего решения.</h1>
+      <p className="career__lead">{site.role}. Разрабатываю коммерческие веб-продукты, улучшаю интерфейсы и выстраиваю практики качества.</p>
+    </header>
 
-  <section className="career__section" aria-labelledby="experience-title">
-    <h2 id="experience-title">Коммерческий опыт</h2>
-    <article className="career__experience">
-      <h3>Angara Security</h3>
-      <p className="career__muted">Март 2024 — сентябрь 2026</p>
-      <ul>
-        <li>Проектировал и разрабатывал функциональность двух продуктов; переработал устаревший UI
-          и пользовательские сценарии, устранил существовавшие ошибки.</li>
-        <li>Совместно с QA выстроил пирамиду тестирования, внедрил тесты внешнего вида интерфейса
-          и процесс покрытия новой функциональности автотестами.</li>
-        <li>Собирал требования заказчиков, преобразовывал их в задачи, консультировал стейкхолдеров
-          и участвовал в код-ревью.</li>
-        <li>Проводил онбординг новых коллег, обучал стажёров и организовывал технические митапы.</li>
-        <li>Внедрил AI-агентов в процесс разработки и практику создания прототипов
-          для проверки продуктовых гипотез до начала разработки.</li>
-      </ul>
-    </article>
-    <article className="career__experience">
-      <h3>Huawei</h3>
-      <p className="career__muted">Апрель 2021 — март 2024 · работа в двух командах</p>
-      <ul>
-        <li>Спроектировал и разработал с нуля сервис визуализации данных;
-          оптимизировал первую отрисовку и устранил утечки памяти.</li>
-        <li>Настроил CI/CD в Jenkins: юнит-тесты, линтинг, сборку и выкладку на тестовый стенд.
-          Организовал сбор продуктовых метрик и выполнял первичную аналитику.</li>
-        <li>В другом сервисе разработал большую часть функциональности, внедрил электронную подпись
-          и выполнил миграцию с JavaScript на TypeScript.</li>
-        <li>Перенёс управление состоянием с самописного решения на Vuex,
-          внедрил единый процесс код-ревью и провёл серию лекций по GraphQL.</li>
-        <li>Менторил стажёра, проводил сессии парного программирования;
-          по необходимости разрабатывал и поддерживал backend проекта.</li>
-      </ul>
-    </article>
-    <p className="career__muted">Описания обобщены: закрытые продукты, заказчики и внутренние материалы не раскрываются.</p>
-  </section>
+    <section aria-labelledby="experience-title">
+      <div className="section-heading"><h2 id="experience-title">Коммерческий опыт</h2></div>
+      {experiences.map((experience) => <article className="experience-detail" key={experience.id} aria-labelledby={`experience-${experience.id}`}>
+        <header>
+          <h3 id={`experience-${experience.id}`}>{experience.employer}</h3>
+          <p>{experience.period}</p>
+          <p>{experience.summary}</p>
+        </header>
+        <ul>{experience.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
+      </article>)}
+      <p className="section-note">Описания обобщены: закрытые продукты, заказчики и внутренние материалы не раскрываются.</p>
+    </section>
 
-  <section className="career__section" aria-labelledby="approach-title">
-    <h2 id="approach-title">Что привношу в команду</h2>
-    <div className="career__grid">
-      <div className="career__card">
-        <h3>Работа с задачей целиком</h3>
-        <p>Уточняю требования, превращаю их в задачи и связываю технические решения
-          с пользовательскими сценариями и целями продукта.</p>
+    <section className="portfolio-section" aria-labelledby="approach-title">
+      <h2 id="approach-title">Инженерный подход</h2>
+      <div className="engineering-approach">
+        <div>
+          <h3>Работа с задачей целиком</h3>
+          <p>Уточняю требования и связываю технические решения с пользовательскими сценариями и целями продукта.</p>
+        </div>
+        <div>
+          <h3>Качество и поддержка</h3>
+          <p>Развиваю автоматизацию тестирования, типизацию и код-ревью. Работаю с производительностью и существующим кодом.</p>
+        </div>
+        <div>
+          <h3>Обмен опытом</h3>
+          <p>Помогаю коллегам адаптироваться, обучаю стажёров и делюсь практиками, полезными всей команде.</p>
+        </div>
       </div>
-      <div className="career__card">
-        <h3>Качество и поддержка</h3>
-        <p>Развиваю автоматизацию тестирования, типизацию и код-ревью.
-          Работаю с производительностью и существующим кодом.</p>
+    </section>
+
+    <section className="stack-section" aria-labelledby="stack-title">
+      <h2 id="stack-title">Текущий стек</h2>
+      <Stack />
+      <p>Vue 3 и TypeScript — интерфейсы, Pinia — управление состоянием, Vitest и Playwright — автоматизированные проверки.</p>
+    </section>
+
+    <aside className="career__callout">
+      <div>
+        <h2>Открыт к предложениям</h2>
+        <p>{site.location} · Предпочитаю удалённую работу.<br />Русский — родной, английский — C1.</p>
       </div>
-      <div className="career__card">
-        <h3>Обмен опытом</h3>
-        <p>Помогаю коллегам адаптироваться, обучаю стажёров, делюсь практиками
-          и внедряю инструменты, полезные всей команде.</p>
-      </div>
-    </div>
-  </section>
-  <aside className="career__callout">
-    <h2>Открыт к предложениям</h2>
-    <p>Ищу роль {site.role}. {site.location} · Предпочитаю удалённую работу.
-      Русский — родной, английский — C1.</p>
-    <div className="career__actions">
-      <a className="career__button" href={`mailto:${site.email}`}>Связаться</a>
-      <a href="/">Посмотреть проекты →</a>
-    </div>
-  </aside>
-</section>
-  );
+      <a className="career__button" href={`mailto:${site.email}`}>Обсудить роль <span aria-hidden="true">↗</span></a>
+    </aside>
+  </div>;
 }

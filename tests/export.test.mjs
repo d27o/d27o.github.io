@@ -89,6 +89,25 @@ test('commercial case results stay visible without expanding details', async () 
   }
 });
 
+test('about presents experience before the detailed stack', async () => {
+  const $ = await load(html('about/'));
+  const sections = $('main section').toArray();
+  const experienceIndex = sections.findIndex((section) => $(section).attr('aria-labelledby') === 'experience-title');
+  const stackIndex = sections.findIndex((section) => $(section).find('[aria-label="Текущий стек"]').length > 0);
+  assert.ok(experienceIndex >= 0, 'The commercial experience section must exist');
+  assert.ok(stackIndex > experienceIndex, 'Detailed technology descriptions should follow the experience');
+  for (const text of ['Angara Security', 'Март 2024 — сентябрь 2026', 'Huawei', 'Апрель 2021 — март 2024']) {
+    assert.ok($(sections[experienceIndex]).text().includes(text), `Missing verified experience: ${text}`);
+  }
+});
+
+test('contact actions retain the public email, GitHub and Telegram addresses', async () => {
+  const $ = await load(html('contact/'));
+  for (const href of ['mailto:kalugin.d27o@gmail.com', 'https://github.com/d27o', 'https://t.me/d27odev']) {
+    assert.equal($('main').find(`a[href="${href}"]`).length, 1, `Missing or duplicate contact action ${href}`);
+  }
+});
+
 test('RSS, crawler files, and a usable not-found page are static assets', async () => {
   const atom = await load(readFileSync(path.join(root, 'feed.xml'), 'utf8'));
   assert.equal(atom('entry').length, 2);
