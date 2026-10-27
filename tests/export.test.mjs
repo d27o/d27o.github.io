@@ -57,7 +57,7 @@ test('local navigation, images, scripts, styles and downloads exist in the expor
 
 test('current stack, commercial work, and existing blog articles survive migration', async () => {
   const $ = await load(html(''));
-  assert.equal($('.career__card').length, 3);
+  assert.equal($('section[aria-labelledby="projects-title"] article').length, 3);
   for (const item of ['Vue 3', 'TypeScript', 'Pinia', 'Vitest', 'Playwright']) {
     assert.ok($('.career__tags').text().includes(item));
   }
@@ -66,6 +66,27 @@ test('current stack, commercial work, and existing blog articles survive migrati
   assert.ok(about('main').text().includes('Huawei'));
   assert.ok((await load(html('post-number-0/')))('article').text().includes('Причина №1'));
   assert.ok((await load(html('bootstrap-5-alpha/')))('article').text().includes('jQuery'));
+});
+
+test('home surfaces verified employers before commercial projects', async () => {
+  const $ = await load(html(''));
+  const projects = $('main section[aria-labelledby="projects-title"]');
+  const precedingText = projects.prevAll().text();
+  for (const employer of ['Angara Security', 'Huawei']) {
+    assert.ok(precedingText.includes(employer), `${employer} must appear before the cases`);
+  }
+});
+
+test('commercial case results stay visible without expanding details', async () => {
+  const $ = await load(html(''));
+  const cases = $('main section[aria-labelledby="projects-title"] article');
+  assert.equal(cases.length, 3);
+  for (const article of cases.toArray()) {
+    const result = $(article).find('p').filter((_, paragraph) => /^Результат\./.test($(paragraph).text().trim()));
+    assert.equal(result.length, 1, 'Each case needs one identifiable outcome');
+    assert.ok(result.text().trim().length > 35, 'The outcome must describe a real result');
+    assert.equal(result.closest('details, [hidden]').length, 0, 'Outcomes must be visible by default');
+  }
 });
 
 test('RSS, crawler files, and a usable not-found page are static assets', async () => {
